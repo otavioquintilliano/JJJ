@@ -37,4 +37,20 @@ document.getElementById('commentForm').addEventListener('submit', function(event
     // Limpa o campo de comentário
     document.getElementById('comment').value = "";
   });
-  
+
+  document.getElementById("cadastrar-link").addEventListener("click", function(event) {
+    event.preventDefault();
+    document.getElementById("auth-dropdown").classList.toggle("show");
+  });
+
+  window.onclick = function(event) {
+    if (!event.target.matches('#cadastrar-link')) {
+      var dropdowns = document.getElementsByClassName("dropdown");
+      for (var i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  };
